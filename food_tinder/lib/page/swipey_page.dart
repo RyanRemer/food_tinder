@@ -12,19 +12,42 @@ class SwipeyPage extends StatefulWidget{
 }
 
 class SwipeyPageState extends State<SwipeyPage>{
+  List<Food> _uncheckedFoods;
   FoodController _foodController;
   Food _currentFood;
 
+  SwipeyPageState(){
+    _foodController = FoodController();
+    _uncheckedFoods = _foodController.getUncheckedFoods();
+    _currentFood = _uncheckedFoods.last;
+  }
+
   @override
   Widget build(BuildContext context) {
-    _foodController = FoodController();
-    _currentFood = _foodController.getUncheckedFoods().first;
     return Scaffold(
       appBar: AppBar(
         title: Text("Food Tinder"),
       ),
-      body: FoodView(_currentFood)
+      body: FoodView(_currentFood,
+      onSwipeLeft: onFoodSwipeLeft,
+        onSwipeRight: onFoodSwipeRight,
+      )
     );
+  }
+
+  void onFoodSwipeLeft(){
+    setState(() {
+      _uncheckedFoods.removeLast();
+      _currentFood = _uncheckedFoods.last;
+    });
+  }
+
+  void onFoodSwipeRight(){
+    setState(() {
+      _uncheckedFoods.insert(0, _currentFood);
+      _uncheckedFoods.removeLast();
+      _currentFood = _uncheckedFoods.last;
+    });
   }
 
 }

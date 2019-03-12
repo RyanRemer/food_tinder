@@ -30,7 +30,10 @@ class MockData {
                 "Coat the chicken thigh fillets and arrange them on the prepared baking tray.",
                 "Bake for 25 to 30 minutes and serve immediately with your choice of rice or salad."
               ],
-              4, 0, 0, "")),
+              4,
+              0,
+              0,
+              "")),
       Food(
         "GLAZED SALMON WITH ZUCCHINI",
         "https://assets.marthastewart.com/styles/wmax-300/d38/five-ways-broiled-salmon-006-med108877/five-ways-broiled-salmon-006-med108877_vert.jpg?itok=AxN9wXOW",
@@ -49,31 +52,37 @@ class MockData {
             "Season zucchini and salmon fillets and broil on an oiled rimmed baking sheet until salmon is opaque throughout, about 5 minutes.",
             "Combine equal parts mustard and marmalade, brush on salmon, and broil 1 to 2 minutes more."
           ],
-          4, 0, 0, "",
+          4,
+          0,
+          0,
+          "",
         ),
       ),
-      Food (
+      Food(
         "BROILED SHRIMP SCAMPI",
         "https://assets.marthastewart.com/styles/wmax-300/d19/20060105_edf_scampi/20060105_edf_scampi_vert.jpg?itok=qLFLPAyM",
         ["Dinner"],
         Recipe(
-          "This classic shrimp dish with garlic and lemon juice is so easy to make. Source: Everyday Food, January/February 2006 (https://www.marthastewart.com/312997/broiled-shrimp-scampi)",
-          [
-            Ingredient("1 1/2", "lbs", "large shrimp, peeled and deveined, tails left on, patted dry"),
-            Ingredient("2", "cloves", "garlic, minced"),
-            Ingredient("2", "tbsps", "freshly squeezed lemon juice"),
-            Ingredient("1", "tbsp", "olive oil"),
-            Ingredient("2", "tbsp", "chopped fresh parsley"),
-            Ingredient("", "", "coarse salt and ground pepper"),
-            Ingredient("", "", "Lemon wedges, for serving")
-          ],
-          [
-            "Heat broiler with rack set 4 inches from heat. Place shrimp on a large broilerproof rimmed baking sheet.",
-            "Sprinkle with oil and garlic, and season generously with salt and pepper; toss to coat. Arrrange shrimp in a single layer.",
-            "Broil until opaque throughout, 3 to 4 minutes. Sprinkle with lemon juice and parsley; toss to combine. Serve immediately; garnish with lemon wedges.",
-          ],
-          4, 0, 0, ""
-        ),
+            "This classic shrimp dish with garlic and lemon juice is so easy to make. Source: Everyday Food, January/February 2006 (https://www.marthastewart.com/312997/broiled-shrimp-scampi)",
+            [
+              Ingredient("1 1/2", "lbs",
+                  "large shrimp, peeled and deveined, tails left on, patted dry"),
+              Ingredient("2", "cloves", "garlic, minced"),
+              Ingredient("2", "tbsps", "freshly squeezed lemon juice"),
+              Ingredient("1", "tbsp", "olive oil"),
+              Ingredient("2", "tbsp", "chopped fresh parsley"),
+              Ingredient("", "", "coarse salt and ground pepper"),
+              Ingredient("", "", "Lemon wedges, for serving")
+            ],
+            [
+              "Heat broiler with rack set 4 inches from heat. Place shrimp on a large broilerproof rimmed baking sheet.",
+              "Sprinkle with oil and garlic, and season generously with salt and pepper; toss to coat. Arrrange shrimp in a single layer.",
+              "Broil until opaque throughout, 3 to 4 minutes. Sprinkle with lemon juice and parsley; toss to combine. Serve immediately; garnish with lemon wedges.",
+            ],
+            4,
+            0,
+            0,
+            ""),
       ),
     ];
   }
