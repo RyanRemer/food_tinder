@@ -10,12 +10,12 @@ class ClientModel {
   }
 
   List<Food> dislikedFood;
-  List<Food> likedFood;
+  List<Food> weeklyFood;
   List<Food> uncheckedFoods;
 
   ClientModel() {
     dislikedFood = List<Food>();
-    likedFood = List<Food>();
     uncheckedFoods = MockData().foods;
+    weeklyFood = uncheckedFoods;
   }
 }

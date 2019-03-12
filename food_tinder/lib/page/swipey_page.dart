@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/food_controller.dart';
 import 'package:food_tinder/model/food.dart';
+import 'package:food_tinder/page/weekly_list_page.dart';
 import 'package:food_tinder/view/food_view.dart';
 
 class SwipeyPage extends StatefulWidget {
@@ -35,7 +36,7 @@ class SwipeyPageState extends State<SwipeyPage> {
             IconButton(
               icon: Icon(Icons.list),
               tooltip: "Week List",
-              onPressed: (){},
+              onPressed: goToWeeklyList,
             ),
             IconButton(
               icon: Icon(Icons.help),
@@ -50,6 +51,10 @@ class SwipeyPageState extends State<SwipeyPage> {
             _buildActionRow(context),
           ],
         ));
+  }
+
+  void goToWeeklyList(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>WeeklyListPage()));
   }
 
   Widget _buildFoodStack(BuildContext context) {
