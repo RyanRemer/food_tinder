@@ -47,7 +47,7 @@ class FoodViewState extends State<FoodView> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  fit: BoxFit.fitWidth, image: NetworkImage(food.photoUrl)),
+                  fit: BoxFit.cover, image: NetworkImage(food.photoUrl)),
             ),
           ),
         ],
