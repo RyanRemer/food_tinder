@@ -11,4 +11,13 @@ class FoodController{
   List<Food> getUncheckedFoods(){
     return _clientModel.uncheckedFoods;
   }
+
+  List<Food> getWeeklyFood(){
+    return _clientModel.weeklyFood;
+  }
+
+  void moveToWeeklyFood(Food food){
+    _clientModel.uncheckedFoods.remove(food);
+    _clientModel.weeklyFood.add(food);
+  }
 }

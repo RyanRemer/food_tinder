@@ -10,5 +10,24 @@ class Food {
 
   Food(this.name, this.photoUrl, this.tags, this.recipe);
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Food &&
+              runtimeType == other.runtimeType &&
+              name == other.name &&
+              photoUrl == other.photoUrl &&
+              tags == other.tags &&
+              recipe == other.recipe;
+
+  @override
+  int get hashCode =>
+      name.hashCode ^
+      photoUrl.hashCode ^
+      tags.hashCode ^
+      recipe.hashCode;
+
+
+
 
 }

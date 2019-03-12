@@ -8,8 +8,9 @@ class IngredientView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(ingredient.toString())
+    return Container(
+      padding: EdgeInsets.only(bottom: 8, left: 16),
+      child: Text(ingredient.toString())
     );
   }
 }
