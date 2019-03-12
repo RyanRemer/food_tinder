@@ -31,7 +31,7 @@ class RecipeView extends StatelessWidget {
 
     for (int i = 0; i < recipe.directions.length; i++) {
       bodyWidgets.add(
-          ListTile(title: Text(i.toString() + ". ${recipe.directions[i]}")));
+          ListTile(title: Text((i + 1).toString() + ". ${recipe.directions[i]}")));
     }
   }
 

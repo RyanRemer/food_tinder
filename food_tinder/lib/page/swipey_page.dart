@@ -29,8 +29,20 @@ class SwipeyPageState extends State<SwipeyPage> {
         appBar: AppBar(
           title: Text(
             "Food Tinder",
-            style: TextStyle(color: Theme.of(context).accentColor),
+            style: TextStyle(color: Colors.red),
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.list),
+              tooltip: "Week List",
+              onPressed: (){},
+            ),
+            IconButton(
+              icon: Icon(Icons.help),
+              tooltip: "Help",
+              onPressed: (){},
+            ),
+          ],
         ),
         body: Column(
           children: <Widget>[
@@ -41,8 +53,8 @@ class SwipeyPageState extends State<SwipeyPage> {
   }
 
   Widget _buildFoodStack(BuildContext context) {
-    return Card(
-      child: _buildFoodItem(_currentFood),
+    return Stack(
+      children: _uncheckedFoods.map((food)=>_buildFoodItem(food)).toList(),
     );
   }
 
