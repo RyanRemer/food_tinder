@@ -122,7 +122,7 @@ class MockData {
       ),
       Food(
         "GRILLED CHICKEN AND QUINOA WITH MATCHA DESSING",
-        "https://assets.epicurious.com/photos/5c6442ee0c9bd34e44ec6f50/6:4/w_274%2Ch_169/grilled-chicken-and-quinoa-matcha-dressing-recipe-BA-021319.jpg",
+        "https://assets.epicurious.com/photos/5c6442ee0c9bd34e44ec6f50/6:4/w_620%2Ch_413/grilled-chicken-and-quinoa-matcha-dressing-recipe-BA-021319.jpg",
         ["LUNCH"],
         Recipe(
             "The dressing on this bowl is a green goddess 2.0, with matcha adding an earthy undertone to the whole dish. Ceremonial is the highest grade of matcha and is made for drinking from the youngest tea leaves. Culinary matcha is still high-quality but has a more robust flavor, allowing it to shine through when combined with other ingredients.",
