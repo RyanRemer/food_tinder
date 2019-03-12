@@ -6,6 +6,6 @@ class Ingredient {
   Ingredient(this.amount, this.unit, this.name);
 
   String toString(){
-    return "${this.amount} ${this.unit} - ${this.name}";
+    return "${this.amount} ${this.unit} ${this.name}";
   }
 }

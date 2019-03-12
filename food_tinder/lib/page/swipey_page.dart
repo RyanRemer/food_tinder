@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/food_controller.dart';
 import 'package:food_tinder/model/food.dart';
@@ -28,15 +30,18 @@ class SwipeyPageState extends State<SwipeyPage>{
       appBar: AppBar(
         title: Text("Food Tinder"),
       ),
-      body: FoodView(_currentFood,
-      onSwipeLeft: onFoodSwipeLeft,
-        onSwipeRight: onFoodSwipeRight,
+      body: Column(
+        children: <Widget>[
+          Expanded(child: _buildFoodStack()),
+          _buildActionRow(),
+        ],
       )
     );
   }
 
   void onFoodSwipeLeft(){
     setState(() {
+      _uncheckedFoods.insert(0, _currentFood);
       _uncheckedFoods.removeLast();
       _currentFood = _uncheckedFoods.last;
     });
@@ -48,6 +53,36 @@ class SwipeyPageState extends State<SwipeyPage>{
       _uncheckedFoods.removeLast();
       _currentFood = _uncheckedFoods.last;
     });
+  }
+
+  Widget _buildFoodStack(){
+   return _buildFoodItem(_currentFood);
+  }
+
+  Widget _buildFoodItem(Food food){
+    return Dismissible(
+      key: Key(food.photoUrl + Random().nextInt(1000).toString()),
+      onDismissed: (direction){
+        if (direction == DismissDirection.startToEnd){
+          onFoodSwipeRight();
+        } else {
+          onFoodSwipeLeft();
+        }
+      },
+      child: FoodView(food),
+    );
+  }
+
+  Widget _buildActionRow(){
+    return Row(
+      children: <Widget>[
+        IconButton(icon: Icon(Icons.remove), onPressed: null),
+        Spacer(),
+        IconButton(icon: Icon(Icons.clear), onPressed: null),
+        Spacer(),
+        IconButton(icon: Icon(Icons.add), onPressed: null)
+      ],
+    );
   }
 
 }

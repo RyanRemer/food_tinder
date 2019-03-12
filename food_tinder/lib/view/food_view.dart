@@ -4,58 +4,75 @@ import 'package:flutter/material.dart';
 import 'package:food_tinder/model/food.dart';
 import 'package:food_tinder/view/recipe_view.dart';
 
-class FoodView extends StatelessWidget {
+class FoodView extends StatefulWidget {
   Food food;
-  VoidCallback onSwipeRight;
-  VoidCallback onSwipeLeft;
 
-  FoodView(this.food, {this.onSwipeLeft, this.onSwipeRight});
+  FoodView(this.food);
+
+  @override
+  State<StatefulWidget> createState() {
+    return FoodViewState(this.food);
+  }
+}
+
+class FoodViewState extends State<FoodView> {
+  Food food;
+  bool showImage;
+
+  FoodViewState(this.food) {
+    this.showImage = true;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView(
-        children: <Widget>[_buildImage(), _buildTitle(context)],
+      child: Column(
+        children: <Widget>[
+          showImage ? _buildImage() : Container(),
+          _buildTitle(context),
+          !showImage ? _buildRecipe() : Container(),
+        ],
       ),
     );
   }
 
   Widget _buildImage() {
-    return Container(
-      height: 300,
+    return Expanded(
       child: Stack(
         children: <Widget>[
-          Center(child: CircularProgressIndicator(),),
-          Dismissible(
-            key: Key(food.photoUrl + Random().nextInt(10000).toString()),
-            onDismissed: (direction){
-              if (direction == DismissDirection.startToEnd && onSwipeRight != null){
-                onSwipeRight();
-              }
-              else if (direction == DismissDirection.startToEnd && onSwipeLeft != null){
-                onSwipeLeft();
-              }
-            },
-            child:  Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fitWidth,
-                    image: NetworkImage(food.photoUrl)),
-              ),
+          Center(
+            child: CircularProgressIndicator(),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fitWidth, image: NetworkImage(food.photoUrl)),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
   Widget _buildTitle(BuildContext context) {
-    return ExpansionTile(
-      title: Text(
-        food.name,
-        style: Theme.of(context).textTheme.title,
+    return ListTile(
+        title: Text(
+          food.name,
+          style: Theme.of(context).textTheme.title,
+        ),
+        trailing: Icon(Icons.info),
+        onTap: () {
+          setState(() {
+            showImage = !showImage;
+          });
+        });
+  }
+
+  Widget _buildRecipe() {
+    return Expanded(
+      child: ListView(
+        children: <Widget>[RecipeView(food.recipe)],
       ),
-      children: <Widget>[RecipeView(food.recipe)],
     );
   }
 }
