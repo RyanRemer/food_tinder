@@ -8,7 +8,7 @@ class FoodView extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return null;
+    return Text(food.name);
   }
 
 }

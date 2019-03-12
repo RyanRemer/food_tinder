@@ -34,7 +34,7 @@ class ClientModel {
                 "Coat the chicken thigh fillets and arrange them on the prepared baking tray.",
                 "Bake for 25 to 30 minutes and serve immediately with your choice of rice or salad."
               ],
-              4)),
+              4, 0, 0, "")),
     ];
   }
 }

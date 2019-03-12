@@ -10,8 +10,6 @@ class Recipe {
   String recipeUrl;
 
   Recipe(this.description, this.ingredients, this.directions, this.servings,
-      {this.prepTime, this.cookTime, this.recipeUrl}){
-    this.prepTime ??= 0;
-    this.cookTime ??= 0;
+      this.prepTime, this.cookTime, this.recipeUrl){
   }
 }

@@ -30,7 +30,7 @@ class MockData {
                 "Coat the chicken thigh fillets and arrange them on the prepared baking tray.",
                 "Bake for 25 to 30 minutes and serve immediately with your choice of rice or salad."
               ],
-              4)),
+              4, 0, 0, "")),
       Food(
         "GLAZED SALMON WITH ZUCCHINI",
         "https://assets.marthastewart.com/styles/wmax-300/d38/five-ways-broiled-salmon-006-med108877/five-ways-broiled-salmon-006-med108877_vert.jpg?itok=AxN9wXOW",
@@ -49,7 +49,7 @@ class MockData {
             "Season zucchini and salmon fillets and broil on an oiled rimmed baking sheet until salmon is opaque throughout, about 5 minutes.",
             "Combine equal parts mustard and marmalade, brush on salmon, and broil 1 to 2 minutes more."
           ],
-          4,
+          4, 0, 0, "",
         ),
       ),
       Food (
@@ -72,7 +72,7 @@ class MockData {
             "Sprinkle with oil and garlic, and season generously with salt and pepper; toss to coat. Arrrange shrimp in a single layer.",
             "Broil until opaque throughout, 3 to 4 minutes. Sprinkle with lemon juice and parsley; toss to combine. Serve immediately; garnish with lemon wedges.",
           ],
-          4
+          4, 0, 0, ""
         ),
       ),
     ];
