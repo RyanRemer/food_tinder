@@ -9,7 +9,7 @@ class IngredientView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(ingredient.toString()),
+      title: Text(ingredient.toString())
     );
   }
 }

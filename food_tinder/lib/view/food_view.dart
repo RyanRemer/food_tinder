@@ -26,6 +26,7 @@ class FoodViewState extends State<FoodView> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Theme.of(context).primaryColor,
       child: Column(
         children: <Widget>[
           showImage ? _buildImage() : Container(),
@@ -55,17 +56,20 @@ class FoodViewState extends State<FoodView> {
   }
 
   Widget _buildTitle(BuildContext context) {
-    return ListTile(
-        title: Text(
-          food.name,
-          style: Theme.of(context).textTheme.title,
-        ),
-        trailing: Icon(Icons.info),
-        onTap: () {
-          setState(() {
-            showImage = !showImage;
-          });
-        });
+    return Container(
+      padding: EdgeInsets.all(8.0),
+        child: ListTile(
+            title: Text(
+              food.name,
+              style: Theme.of(context).textTheme.title,
+            ),
+            trailing:
+                showImage ? Icon(Icons.expand_more) : Icon(Icons.expand_less),
+            onTap: () {
+              setState(() {
+                showImage = !showImage;
+              });
+            }));
   }
 
   Widget _buildRecipe() {

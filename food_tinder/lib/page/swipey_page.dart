@@ -27,7 +27,10 @@ class SwipeyPageState extends State<SwipeyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Food Tinder"),
+          title: Text(
+            "Food Tinder",
+            style: TextStyle(color: Theme.of(context).accentColor),
+          ),
         ),
         body: Column(
           children: <Widget>[
@@ -38,7 +41,9 @@ class SwipeyPageState extends State<SwipeyPage> {
   }
 
   Widget _buildFoodStack(BuildContext context) {
-    return _buildFoodItem(_currentFood);
+    return Card(
+      child: _buildFoodItem(_currentFood),
+    );
   }
 
   Widget _buildFoodItem(Food food) {
@@ -58,33 +63,39 @@ class SwipeyPageState extends State<SwipeyPage> {
   static const double ICON_SIZE = 30.0;
 
   Widget _buildActionRow(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.remove),
-          color: Colors.redAccent,
-          onPressed: rejectFood,
-          iconSize: ICON_SIZE,
-        ),
-        Spacer(),
-        IconButton(
-          icon: Icon(Icons.clear),
-          color: Colors.white,
-          onPressed: killFood,
-          iconSize: ICON_SIZE,
-        ),
-        Spacer(),
-        IconButton(
-          icon: Icon(Icons.add),
-          color: Colors.greenAccent,
-          onPressed: acceptFood,
-          iconSize: ICON_SIZE,
-        )
-      ],
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      child: Row(
+        children: <Widget>[
+          _buildActionButton(
+            icon: Icon(Icons.remove),
+            color: Colors.redAccent,
+            onPressed: rejectFood,
+            label: Text("Not Now"),
+          ),
+          Spacer(),
+          _buildActionButton(
+            icon: Icon(Icons.clear),
+            onPressed: killFood,
+            label: Text("Never"),
+          ),
+          Spacer(),
+          _buildActionButton(
+            icon: Icon(Icons.add),
+            color: Colors.green,
+            onPressed: acceptFood,
+            label: Text("This Week"),
+          )
+        ],
+      ),
     );
   }
 
-  void rejectFood(){
+  Widget _buildActionButton({Icon icon, Color color, VoidCallback onPressed, Widget label}){
+    return RaisedButton.icon(onPressed: onPressed, icon: icon, label: label, color: color,);
+  }
+
+  void rejectFood() {
     setState(() {
       _uncheckedFoods.insert(0, _currentFood);
       _uncheckedFoods.removeLast();
@@ -92,7 +103,7 @@ class SwipeyPageState extends State<SwipeyPage> {
     });
   }
 
-  void killFood(){
+  void killFood() {
     setState(() {
       _uncheckedFoods.insert(0, _currentFood);
       _uncheckedFoods.removeLast();
@@ -100,7 +111,7 @@ class SwipeyPageState extends State<SwipeyPage> {
     });
   }
 
-  void acceptFood(){
+  void acceptFood() {
     setState(() {
       _uncheckedFoods.insert(0, _currentFood);
       _uncheckedFoods.removeLast();
