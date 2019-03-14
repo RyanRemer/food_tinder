@@ -232,6 +232,74 @@ class MockData {
           "https://www.epicurious.com/recipes/food/views/grapefruit-bars-with-candied-zest"
         ),
       ),
+      Food (
+        "Pimiento Cheese Crackers",
+        "https://assets.epicurious.com/photos/5c1149673e9ec157ff93ded2/6:4/w_620%2Ch_413/pimento-cheese-crackers-recipe-BA-121218.jpg",
+        ["Snack"],
+        Recipe(
+          "The addictive cheddar cracker is all grown up, thanks to a little heat from the cayenne and a hint of sweet pepper from the pimiento. This dough can be formed into a log and stashed in the freezer so it’s on hand for whenever you just happen to need a party appetizer. Let thaw in the fridge overnight before slicing.",
+          [
+            Ingredient("12", "oz", "sharp cheddar, coarsely grated (about 4 cups)"),
+            Ingredient("1", "cup", "all-purpose flour"),
+            Ingredient("2", "tbsp", "all-purpose flour"),
+            Ingredient("1 1/2", "tsp", "kosher salt"),
+            Ingredient("1/4", "tsp", "cayenne pepper"),
+            Ingredient("1/4", "cup", "chopped jarred pimiento peppers"),
+            Ingredient("5", "tbsp", "chilled unsalted butter, cut into pieces"),
+            Ingredient("3", "tbsp", "white or black sesame seeds")
+          ],
+          [
+            "Pulse cheese, flour, salt, and cayenne in a food processor to combine (4–6 pulses should do it). Add pimiento peppers and pulse until mixture turns orange (another 2 or 3 pulses). Add butter and pulse until largest pieces are about the size of a pea (4–6 pulses). Drizzle in 2 Tbsp. ice water and pulse 2 or 3 more times. Dough should stick together when squeezed in your hand. If not, pulse in another tablespoonful of ice water.",
+            "Transfer dough to a work surface and form into a tightly packed 2\"-diameter log. Gently sprinkle sesame seeds over surface and roll log over sesame seeds, pressing them into dough to adhere, until completely coated. Discard any sesame seeds that don’t stick. Wrap dough in plastic and chill at least 4 hours and up to 2 days before rolling out",
+            "Place a rack in the middle of oven; preheat to 350°F. Unwrap dough and using a sharp knife, slice into thin rounds; aim for 1/8\"–1/4\" thick. Transfer rounds to a parchment-lined baking sheet, spacing about 1\" apart (they won’t all fit in one batch). Prick each cracker 3–4 times with a fork to keep them from puffing up and bake, rotating baking sheet front to back halfway through, until tops and edges are golden, 25–30 minutes. Let cool on baking sheet; crackers will crisp as they cool. Repeat with remaining rounds and a fresh parchment-lined baking sheet.",
+          ],
+          8,
+          0,
+          0,
+          "https://www.epicurious.com/recipes/food/views/pimiento-cheese-crackers"
+        )
+      ),
+      Food (
+        "Cranberry-Pistachio Based Alaska",
+        "https://assets.epicurious.com/photos/5c0997ed4c751936404124bd/6:4/w_620%2Ch_413/Gourmet-Christmas-Cranberry-Pistachio-Baked-Alaska-Recipe-14112018.jpg",
+        ["Dessert"],
+        Recipe(
+          "The magic of Christmas can be summed up in this splendid present to everyone at the table. Underneath the toasted meringue, you’ll find a surprising lightness that comes from cheery red cranberry sorbet layered with pale green pistachio ice cream and buttery pound cake (store-bought works just fine). Gift wrapping is optional.",
+          [
+            Ingredient("1/2", "", "vanilla bean"),
+            Ingredient("1", "cup", "whole milk"),
+            Ingredient("1", "cup", "heavy cream"),
+            Ingredient("1/3", "cup", "sugar, divided"),
+            Ingredient("2", "", "large egg yolks"),
+            Ingredient("1/4", "cup", "well-stirred pistachio paste"),
+            Ingredient("1/2", "cup", "raw shelled pistachios, coarsely chopped"),
+            Ingredient("2", "cups", "fresh or frozen cranberries (7 oz)"),
+            Ingredient("1", "cup", "water"),
+            Ingredient("1/2", "cup", "sugar"),
+            Ingredient("2", "strips", "orange zest (3- by 1/2-inch"),
+            Ingredient("", "", "pound cake"),
+            Ingredient("3", "", "large egg whites at room temperature"),
+            Ingredient("1/2", "cup", "sugar"),
+          ],
+          [
+            "Split vanilla bean lengthwise and scape seeds into a heavy medium saucepan using tip of a paring knife, then add pod. Add milk, cream, and half of sugar and bring to a boil, stirring until sugar has dissolved.",
+            "Whisk yolks with remaining sugar in a large bowl. Slowly add hot milk mixture, whisking. Return mixture to saucepan and cook over medium-low heat, stirring constantly with a wooden spoon, until custard is slightly thickened and registers 170°F on an instant-read thermometer (do not let boil)",
+            "Immediately strain through a fine-mesh sieve into a metal bowl, discarding vanilla bean. Whisk in pistachio paste. Chill custard at least 6 hours.",
+            "Bring cranberries, water, sugar, and zest to a boil in a medium saucepan, then simmer, stirring occasionally, until most of the cranberries have burst, about 5 minutes. Purée in a blender (use caution when blending hot liquids), then force through a fine-mesh sieve into a bowl. Chill at least 6 hours.",
+            "Line loaf pan with a large sheet of plastic wrap, leaving a 4-inch overhang on all sides. Trim off top of cake and cut 2 (1/2-inch-thick) long horizontal slices from cake, reserving remainder for another use. Place 1 layer in bottom of pan, trimming to fit, and put in freezer. Cover remaining cake layer with plastic wrap to keep moist.",
+            "Freeze sorbet base in ice cream maker, then transfer to loaf pan, smoothing evenly over cake layer. Freeze 1 hour.",
+            "Freeze custard in cleaned ice cream maker, then fold in chopped pistachios, spread ice cream over cranberry sorbet, smoothing top, then top with remaining cake layer, pressing it flat. Wrap cake with overhang and freeze until firm, at least 6 hours.",
+            "Preheat oven to 450°F with rack in middle.",
+            "Beat egg whites with an electric mixer at medium-high speed until foamy. Gradually beat in sugar, then beat until whites hold stiff peaks. Invert cake onto a parchment-lined baking sheet and discard plastic wrap. Spread meringue over top and sides of cake. Bake until meringue is tipped with brown, 3 to 5 minutes. Serve immediately.",
+            "Assembled cake (without meringue) can be frozen, wrapped tightly with plastic wrap, up to 4 days. Cake can be covered with meringue (but not baked) 4 hours ahead and frozen, uncovered.",
+          ],
+          8,
+          60,
+          60*13,
+          "https://www.epicurious.com/recipes/food/views/cranberry-pistachio-baked-alaska"
+        ),
+
+      ),
     ];
   }
 }
