@@ -13,7 +13,7 @@ class MockData {
   MockData() {
     foods = [
       Food(
-          "GRILLED CHICKEN WITH TOMATO, SOY & SESAME SEEDS",
+          "Grilled Chicken with Tomato, Soy & Sesame Seeds",
           "http://www.fussfreecooking.com/wp-content/uploads/2015/07/a1.jpg",
           ["Dinner"],
           Recipe(
@@ -35,7 +35,7 @@ class MockData {
               0,
               "")),
       Food(
-        "GLAZED SALMON WITH ZUCCHINI",
+        "Glazed Salmon with Zucchini",
         "https://assets.marthastewart.com/styles/wmax-300/d38/five-ways-broiled-salmon-006-med108877/five-ways-broiled-salmon-006-med108877_vert.jpg?itok=AxN9wXOW",
         ["Dinner"],
         Recipe(
@@ -59,7 +59,7 @@ class MockData {
         ),
       ),
       Food(
-        "BROILED SHRIMP SCAMPI",
+        "Broiled Shrimp Scampi",
         "https://assets.marthastewart.com/styles/wmax-300/d19/20060105_edf_scampi/20060105_edf_scampi_vert.jpg?itok=qLFLPAyM",
         ["Dinner"],
         Recipe(
@@ -85,9 +85,9 @@ class MockData {
             "https://www.marthastewart.com/312997/broiled-shrimp-scampi"),
       ),
       Food(
-        "STEAK STROGANOFF",
+        "Steak Stroganoff",
         "https://assets.epicurious.com/photos/5c61ff8a4f003745865190d6/6:4/w_620%2Ch_413/Weeknight-Beef-Stroganoff-recipe-07022019.jpg",
-        ["DINNER"],
+        ["Dinner"],
         Recipe(
             "This is not your grandma’s beef stroganoff. We took our favorite parts of the classic—the creamy mushroom sauce and the buttered egg noodles—and added a squeeze of lemon, a pan-seared medium-rare strip steak, and fresh dill for an updated weeknight dinner.",
             [
@@ -121,9 +121,9 @@ class MockData {
         ),
       ),
       Food(
-        "GRILLED CHICKEN AND QUINOA WITH MATCHA DESSING",
+        "Grilled Chicken and Quinoa With Matcha Dressing",
         "https://assets.epicurious.com/photos/5c6442ee0c9bd34e44ec6f50/6:4/w_620%2Ch_413/grilled-chicken-and-quinoa-matcha-dressing-recipe-BA-021319.jpg",
-        ["LUNCH"],
+        ["Lunch"],
         Recipe(
             "The dressing on this bowl is a green goddess 2.0, with matcha adding an earthy undertone to the whole dish. Ceremonial is the highest grade of matcha and is made for drinking from the youngest tea leaves. Culinary matcha is still high-quality but has a more robust flavor, allowing it to shine through when combined with other ingredients.",
             [
@@ -157,6 +157,80 @@ class MockData {
             0,
             0,
             "https://www.epicurious.com/recipes/food/views/grilled-chicken-and-quinoa-with-matcha-dressing"),
+      ),
+      Food(
+        "SAVORY DUTCH BABY FOR TWO",
+        "https://assets.epicurious.com/photos/5c61b3ce580916481fe06e33/6:4/w_620%2Ch_413/Savory-Dutch-Baby-For-Two-hero-2-07022019.jpg",
+        ["Breakfast"],
+        Recipe(
+          "Parmesan and thyme make this Baby savory, which makes it perfect to eat alongside eggs. But the real beauty of this recipe is that the batter can be made up to two days in advance—and kept in the fridge for an easy romantic breakfast for two.",
+          [
+            Ingredient("1/4", "cup", "all-purpose flour"),
+            Ingredient("1", "tbsp", "sugar"),
+            Ingredient("1", "tsp", "finely chopped thyme leaves"),
+            Ingredient("1/2", "tsp", "kosher salt"),
+            Ingredient("1/2", "tsp", "freshly ground black pepper"),
+            Ingredient("2", "tbsp", "finely grated Permesan, plus more for serving"),
+            Ingredient("2", "", "large eggs"),
+            Ingredient("1/2", "cup", "whole milk"),
+            Ingredient("2", "tbsp", "unsalted butter, cut into pieces"),
+            Ingredient("", "", "Crème fraîche, smoked salmon, baby greens, and lemon wedges (for serving; optional)"),
+          ],
+          [
+            "Preheat oven to 425°F. Whisk flour, sugar, thyme, salt, pepper, and 2 Tbsp. Parmesan in a small bowl.",
+            "Process eggs and milk in a blender until light and frothy, about 2 minutes. Add flour mixture and pulse to combine.",
+            "Heat a 10\" cast-iron skillet over medium-high. Once hot, melt butter and swirl to coat skillet. Pour batter into hot melted butter in skillet. Transfer to oven and bake until puffed and golden brown, 12–15 minutes.",
+            "Sprinkle Parmesan over pancake before serving with crème fraîche, smoked salmon, baby greens, and lemon wedges (if using).",
+            "Do Ahead: Batter can be made 2 days ahead. Transfer to a medium jar and chill. Shake jar before cooking."
+          ],
+          2,
+          10,
+          25,
+          "https://www.epicurious.com/recipes/food/views/savory-dutch-baby-for-two"
+        ),
+      ),
+      Food (
+        "Grapefruit Bars with Candied Zest",
+        "https://assets.epicurious.com/photos/5c114607b6a8347908b6f8e4/6:4/w_620%2Ch_413/grapefruit-bars-with-candied-zest-recipe-BA-121218.jpg",
+        ["Dessert"],
+        Recipe(
+          "Joy to the world: a citrus bar just as beautiful as it is zingy. The twice-cooked curd method was inspired by authors Rose Levy Beranbaum and Melissa Clark and ensures that these bars are extra sturdy and have a smooth, shiny surface. They hold their shape well even when sliced.",
+          [
+            Ingredient("1", "cup", "all-purpose flour"),
+            Ingredient("3/4", "cup", "powdered sugar"),
+            Ingredient("2", "tbsp", "granulated sugar"),
+            Ingredient("3/4", "tsp", "kosher salt"),
+            Ingredient("1/2", "cup", "chilled unsalted butter, cut into pieces"),
+            Ingredient("2", "", "large egg yolks"),
+            Ingredient("1", "", "grapefruit"),
+            Ingredient("1/2", "cup", "granulated sugar, divided"),
+            Ingredient("3", "", "large eggs"),
+            Ingredient("3", "", "large egg yolks"),
+            Ingredient("1", "cup", "granulated sugar"),
+            Ingredient("1", "tbsp", "cornstarch"),
+            Ingredient("1", "tbsp", "finely grated grapefruit zest"),
+            Ingredient("1/4", "cup", "fresh grapefruit juice"),
+            Ingredient("2", "tsp", "finely grated lemon zest"),
+            Ingredient("3/4", "cup", "fresh lemon juice"),
+            Ingredient("1", "tsp", "vanilla extract or paste"),
+            Ingredient("1/2", "tsp", "kosher salt"),
+            Ingredient("1/2", "cup", "unsalted butter, room temperature, cut into 8 pieces"),
+            Ingredient("", "", "powdered sugar (for serving, optional)")
+          ],
+          [
+            "Place a rack in middle of oven; preheat to 350°F. Line an 8x8\" baking pan, preferably metal, with overlapping sheets of parchment paper, leaving at least 4\" overhang on each side. Pulse flour, powdered sugar, granulated sugar, and salt in a food processor a few times to combine. Add butter and pulse until largest pieces are pea-size. Add egg yolks and pulse just until dough comes together in small clumps. (Shortbread can also be made by hand: Whisk dry ingredients in a large bowl, then work in the butter with your fingers before mixing in the egg yolks with a sturdy spoon.)",
+            "Transfer dough to prepared pan (you may find it easier to form the dough into a ball first, instead of working with clumps—entirely up to you!) and press into an even layer. If dough is sticky, use a piece of plastic wrap between your hand and the dough. Prick dough with a fork in several spots (this helps it stay flat as it bakes). Bake shortbread until edges and top are golden brown, 24–28 minutes. Let cool.",
+            "While the shortbread is baking, use a sharp knife to remove zest from grapefruit in 2\"–3\" wide strips (it’s okay to leave some white pith attached). Slice strips very thinly lengthwise; save fruit for another use. Combine zest and 2 cups water in a small saucepan and bring to a simmer. Drain immediately. Combine zest with 1/4 cup granulated sugar and 1 cup water in the same saucepan and bring to a simmer. Cook, stirring occasionally, until zest is translucent and softened, 15–20 minutes. Drain, discarding syrup, and toss zest in a small bowl with remaining 1/4 cup granulated sugar. Set aside until ready to use.",
+            "Reduce oven temperature to 300°F. Vigorously whisk eggs, egg yolks, granulated sugar, and cornstarch in a large saucepan until smooth and sugar is mostly dissolved. Whisk in grapefruit zest and juice, lemon zest and juice, and vanilla. Set saucepan over medium heat and cook, whisking constantly and making sure to get into the corners of the pan, until curd begins to bubble slightly around the edges and thickens, about 5 minutes. Simmer very gently, still whisking, 30 seconds, then remove from heat. Whisk salt into curd, followed by butter a piece at a time, whisking to fully incorporate after each addition. Scrape curd into pan with shortbread and smooth over crust. Top with some of the candied grapefruit zest (you probably won’t need all of it; snack on any left over!).",
+            "Bake grapefruit bars until surface of curd is set (the center will still wobble slightly when pan is gently shaken), 20–25 minutes. Transfer to the refrigerator and chill until very cold, at least 3 hours, or preferably overnight.",
+            "Just before serving, slice grapefruit bars into 2\" squares and dust with powdered sugar if desired.",
+            "Shortbread can be baked 3 days ahead. Store tightly covered at room temperature. Grapefruit can be candied 1 week ahead. Store airtight at room temperature. Bars can be baked 3 days ahead. Cover and keep chilled."
+          ],
+          0,
+          0,
+          0,
+          "https://www.epicurious.com/recipes/food/views/grapefruit-bars-with-candied-zest"
+        ),
       ),
     ];
   }
