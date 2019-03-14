@@ -23,6 +23,7 @@ class RecipeView extends StatelessWidget {
     _addRecipeIngredients(bodyWidgets, context);
     bodyWidgets.add(const Divider());
     _addRecipeDirections(bodyWidgets, context);
+    bodyWidgets.add(const Divider());
 
     return bodyWidgets;
   }

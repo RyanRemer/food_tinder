@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:food_tinder/model/food.dart';
+import 'package:food_tinder/view/food_image_view.dart';
 import 'package:food_tinder/view/recipe_view.dart';
 
 class FoodView extends StatefulWidget {
@@ -39,19 +40,7 @@ class FoodViewState extends State<FoodView> {
 
   Widget _buildImage() {
     return Expanded(
-      child: Stack(
-        children: <Widget>[
-          Center(
-            child: CircularProgressIndicator(),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover, image: NetworkImage(food.photoUrl)),
-            ),
-          ),
-        ],
-      ),
+      child: FoodImageView(food.photoUrl),
     );
   }
 

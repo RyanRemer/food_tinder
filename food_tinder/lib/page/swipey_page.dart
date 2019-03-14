@@ -41,7 +41,7 @@ class SwipeyPageState extends State<SwipeyPage> {
             IconButton(
               icon: Icon(Icons.help),
               tooltip: "Help",
-              onPressed: (){},
+              onPressed: () {},
             ),
           ],
         ),
@@ -53,13 +53,14 @@ class SwipeyPageState extends State<SwipeyPage> {
         ));
   }
 
-  void goToWeeklyList(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>WeeklyListPage()));
+  void goToWeeklyList() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => WeeklyListPage()));
   }
 
   Widget _buildFoodStack(BuildContext context) {
     return Stack(
-      children: _uncheckedFoods.map((food)=>_buildFoodItem(food)).toList(),
+      children: _uncheckedFoods.map((food) => _buildFoodItem(food)).toList(),
     );
   }
 
@@ -88,28 +89,34 @@ class SwipeyPageState extends State<SwipeyPage> {
             icon: Icon(Icons.remove),
             color: Colors.redAccent,
             onPressed: rejectFood,
-            label: Text("Not Now"),
+            labelText: "Not Now",
           ),
           Spacer(),
           _buildActionButton(
             icon: Icon(Icons.clear),
             onPressed: killFood,
-            label: Text("Never"),
+            labelText: "Never",
           ),
           Spacer(),
           _buildActionButton(
             icon: Icon(Icons.add),
             color: Colors.green,
             onPressed: acceptFood,
-            label: Text("This Week"),
+            labelText: "This Week",
           )
         ],
       ),
     );
   }
 
-  Widget _buildActionButton({Icon icon, Color color, VoidCallback onPressed, Widget label}){
-    return RaisedButton.icon(onPressed: onPressed, icon: icon, label: label, color: color,);
+  Widget _buildActionButton(
+      {Icon icon, Color color, VoidCallback onPressed, String labelText}) {
+    return RaisedButton.icon(
+      onPressed: onPressed,
+      icon: icon,
+      label: Text(labelText),
+      color: color,
+    );
   }
 
   void rejectFood() {
