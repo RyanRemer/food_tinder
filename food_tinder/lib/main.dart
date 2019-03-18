@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primarySwatch: Colors.red,
+        accentColor: Colors.yellowAccent
       ),
       home: SwipeyPage(),
     );

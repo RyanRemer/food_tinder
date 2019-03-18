@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:food_tinder/model/food.dart';
 import 'package:food_tinder/view/food_image_view.dart';
@@ -27,7 +25,6 @@ class FoodViewState extends State<FoodView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
       child: Column(
         children: <Widget>[
           showImage ? _buildImage() : Container(),
@@ -46,7 +43,7 @@ class FoodViewState extends State<FoodView> {
 
   Widget _buildTitle(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0),
         child: ListTile(
             title: Text(
               food.name,
