@@ -58,9 +58,12 @@ class SwipeyPageState extends State<SwipeyPage> {
   }
 
   Widget _buildFoodStack(BuildContext context) {
-    return Stack(
-      children:
-          _uncheckedFoods.map((food) => _buildFoodItem(context, food)).toList(),
+    return Container(
+      color: Colors.indigo[50],
+      child: Stack(
+        children:
+        _uncheckedFoods.map((food) => _buildFoodItem(context, food)).toList(),
+      ),
     );
   }
 
