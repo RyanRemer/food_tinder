@@ -74,9 +74,9 @@ class SwipeyPageState extends State<SwipeyPage> {
           acceptFood();
         }
       },
-      child: Center(
-        child: Container(
-          padding: EdgeInsets.all(16),
+      child: Container(
+        padding: EdgeInsets.all(16),
+        child: Center(
           child: Card(
             child: FoodView(food),
           ),
