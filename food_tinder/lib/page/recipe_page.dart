@@ -9,7 +9,14 @@ class RecipePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return RecipeView(food.recipe);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Recipe Information"),
+      ),
+      body: ListView(
+        children: <Widget>[RecipeView(food.recipe)],
+      ),
+    );
   }
 
 }
