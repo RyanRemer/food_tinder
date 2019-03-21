@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/food_controller.dart';
 import 'package:food_tinder/model/food.dart';
-import 'package:food_tinder/view/food_image_view.dart';
-import 'package:food_tinder/view/food_view.dart';
-import 'package:food_tinder/view/recipe_view.dart';
+import 'package:food_tinder/view/min_food_view.dart';
 
 class WeeklyListPage extends StatefulWidget {
   @override
@@ -23,12 +21,14 @@ class WeeklyListPageState extends State<WeeklyListPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Food Tinder",
-            style: TextStyle(color: Colors.red),
+            "Food for the Week",
           ),
         ),
-        body: ListView(
-          children: _buildBody(context),
+        body: Container(
+          color: Colors.indigo[50],
+          child: ListView(
+            children: _buildBody(context),
+          ),
         ));
   }
 
@@ -37,10 +37,10 @@ class WeeklyListPageState extends State<WeeklyListPage> {
 
     bodyWidgets.addAll(_weeklyFood
         .map((food) => Container(
-            padding: EdgeInsets.only(bottom: 16),
+            padding: EdgeInsets.all(16),
             height: 400.0,
             child: Card(
-              child: FoodView(food),
+              child: MinFoodView(food),
             )))
         .toList());
 

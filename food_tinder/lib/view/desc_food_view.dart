@@ -2,24 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:food_tinder/model/food.dart';
 import 'package:food_tinder/page/recipe_page.dart';
 import 'package:food_tinder/view/food_image_view.dart';
-import 'package:food_tinder/view/recipe_view.dart';
 
-class FoodView extends StatefulWidget {
+class DescFoodView extends StatefulWidget {
   Food food;
 
-  FoodView(this.food);
+  DescFoodView(this.food);
 
   @override
   State<StatefulWidget> createState() {
-    return FoodViewState(this.food);
+    return DescFoodViewState(this.food);
   }
 }
 
-class FoodViewState extends State<FoodView> {
+class DescFoodViewState extends State<DescFoodView> {
   Food food;
   bool showImage;
 
-  FoodViewState(this.food) {
+  DescFoodViewState(this.food) {
     this.showImage = true;
   }
 
@@ -57,13 +56,12 @@ class FoodViewState extends State<FoodView> {
               onPressed: () {
                 _onTitleTap(context);
               }),
-//                showImage ? Icon(Icons.expand_more) : Icon(Icons.expand_less),
         ));
   }
 
-  String _getSubtitle(){
+  String _getSubtitle() {
     var subtitle = "";
-    for (var tag in food.tags){
+    for (var tag in food.tags) {
       subtitle += tag.toString() + " ";
     }
     return subtitle;
@@ -75,29 +73,10 @@ class FoodViewState extends State<FoodView> {
       padding: EdgeInsets.only(left: padding, right: padding, bottom: padding),
       child: Text(food.recipe.description),
     );
-
-//    return Row(
-//      children: food.tags.map((tag)=>Container(
-//        padding: EdgeInsets.all(8.0),
-//        child: Text(tag),
-//      )).toList(),
-//    );
   }
 
   void _onTitleTap(BuildContext context) {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => RecipePage(food)));
-
-//    setState(() {
-//      showImage = !showImage;
-//    });
-  }
-
-  Widget _buildRecipe() {
-    return Expanded(
-      child: ListView(
-        children: <Widget>[RecipeView(food.recipe)],
-      ),
-    );
   }
 }
