@@ -12,13 +12,16 @@ class WeeklyListPage extends StatefulWidget {
 
 class WeeklyListPageState extends State<WeeklyListPage> {
   List<Food> _weeklyFood;
+  FoodController foodController = FoodController();
 
+
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    var foodController = FoodController();
     _weeklyFood = foodController.getWeeklyFood();
 
     return Scaffold(
+      key: _scaffoldKey,
         appBar: AppBar(
           title: Text(
             "Food for the Week",
@@ -26,9 +29,12 @@ class WeeklyListPageState extends State<WeeklyListPage> {
         ),
         body: Container(
           color: Colors.indigo[50],
-          child: ListView(
-            children: _buildBody(context),
-          ),
+          child: _weeklyFood.length > 0
+              ? ListView(
+                  children: _buildBody(context),
+                )
+              : Center(
+                  child: Text("No planned recipes for this week.")),
         ));
   }
 
@@ -44,6 +50,27 @@ class WeeklyListPageState extends State<WeeklyListPage> {
             )))
         .toList());
 
+    bodyWidgets.add(Container(
+      padding: EdgeInsets.only(bottom: 32),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          RaisedButton(
+            child: Text("Empty Weekly List"),
+            onPressed: emptyWeeklyList,
+          )
+        ],
+      ),
+    ));
+
     return bodyWidgets;
+  }
+
+  void emptyWeeklyList() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("Emptied food for the week!")));
+
+    setState(() {
+      foodController.clearWeeklyFood();
+    });
   }
 }

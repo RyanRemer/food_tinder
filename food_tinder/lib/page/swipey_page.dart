@@ -38,12 +38,12 @@ class SwipeyPageState extends State<SwipeyPage> {
             IconButton(
               icon: Icon(Icons.list),
               tooltip: "Week List",
-              onPressed: goToWeeklyList,
+              onPressed: () => goToWeeklyList(context),
             ),
             IconButton(
               icon: Icon(Icons.help),
               tooltip: "Help",
-              onPressed: () {},
+              onPressed: () => showHelp(context),
             ),
           ],
         ),
@@ -57,12 +57,22 @@ class SwipeyPageState extends State<SwipeyPage> {
             )));
   }
 
-  void goToWeeklyList() {
+  void goToWeeklyList(BuildContext context) {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => WeeklyListPage()));
   }
+  
+  void showHelp(BuildContext context) {
+    showDialog(context: context, builder: (context) =>
+    AlertDialog(
+      title: Text("Info"),
+      content: Text("This app was made to help you plan your meals for the weak. It is called Food Tinder, because it's like Tinder, but for food! Swipe right to add a recipe to your week, swipe left to reject the recipe, and tap the list icon to view your recipes for the week."),
+    ));
+  }
 
   Widget _buildFoodStack(BuildContext context) {
+    _currentFood = _uncheckedFoods.last;
+
     List<Widget> stackWidgets = [
       Center(
         child: Text("No food left to explore!"),
@@ -151,17 +161,15 @@ class SwipeyPageState extends State<SwipeyPage> {
     setState(() {
       _uncheckedFoods.insert(0, _currentFood);
       _uncheckedFoods.removeLast();
-      _currentFood = _uncheckedFoods.last;
     });
   }
 
   void acceptFood() {
+    _scaffoldKey.currentState.showSnackBar(
+        SnackBar(content: Text("Added ${_currentFood.name} To Week"), duration: Duration(seconds: 1),));
+
     setState(() {
-      _uncheckedFoods.insert(0, _currentFood);
-      _scaffoldKey.currentState.showSnackBar(
-          SnackBar(content: Text("Added ${_currentFood.name} To Week")));
-      _uncheckedFoods.removeLast();
-      _currentFood = _uncheckedFoods.last;
+      _foodController.moveToWeeklyFood(_currentFood);
     });
   }
 }

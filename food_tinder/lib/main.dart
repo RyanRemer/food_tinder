@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.red,
-        accentColor: Colors.yellowAccent
+        accentColor: Colors.indigoAccent
       ),
       home: SwipeyPage(),
     );
