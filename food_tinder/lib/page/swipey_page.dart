@@ -61,13 +61,15 @@ class SwipeyPageState extends State<SwipeyPage> {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => WeeklyListPage()));
   }
-  
+
   void showHelp(BuildContext context) {
-    showDialog(context: context, builder: (context) =>
-    AlertDialog(
-      title: Text("Info"),
-      content: Text("This app was made to help you plan your meals for the weak. It is called Food Tinder, because it's like Tinder, but for food! Swipe right to add a recipe to your week, swipe left to reject the recipe, and tap the list icon to view your recipes for the week."),
-    ));
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Info"),
+              content: Text(
+                  "This app was made to help you plan your meals for the weak. It is called Food Tinder, because it's like Tinder, but for food! Swipe right to add a recipe to your week, swipe left to reject the recipe, and tap the list icon to view your recipes for the week."),
+            ));
   }
 
   Widget _buildFoodStack(BuildContext context) {
@@ -79,7 +81,7 @@ class SwipeyPageState extends State<SwipeyPage> {
       )
     ];
 
-    if (_uncheckedFoods.length > 0){
+    if (_uncheckedFoods.length > 0) {
       stackWidgets
           .addAll(_uncheckedFoods.map((food) => _buildFoodItem(context, food)));
     }
@@ -100,15 +102,16 @@ class SwipeyPageState extends State<SwipeyPage> {
       child: Container(
         padding: EdgeInsets.all(16),
         child: Center(
-          child: Card(
+          child: Container(
+              color: Colors.white,
               child: Column(
-            children: <Widget>[
-              Expanded(
-                child: DescFoodView(food),
-              ),
-              _buildActionRow(context)
-            ],
-          )),
+                children: <Widget>[
+                  Expanded(
+                    child: DescFoodView(food),
+                  ),
+                  _buildActionRow(context)
+                ],
+              )),
         ),
       ),
     );
@@ -154,6 +157,7 @@ class SwipeyPageState extends State<SwipeyPage> {
         style: TextStyle(color: Colors.white),
       ),
       color: color,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
     );
   }
 
@@ -165,8 +169,10 @@ class SwipeyPageState extends State<SwipeyPage> {
   }
 
   void acceptFood() {
-    _scaffoldKey.currentState.showSnackBar(
-        SnackBar(content: Text("Added ${_currentFood.name} To Week"), duration: Duration(seconds: 1),));
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Added ${_currentFood.name} To Week"),
+      duration: Duration(seconds: 1),
+    ));
 
     setState(() {
       _foodController.moveToWeeklyFood(_currentFood);
