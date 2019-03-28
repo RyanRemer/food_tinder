@@ -159,7 +159,7 @@ class MockData {
             "https://www.epicurious.com/recipes/food/views/grilled-chicken-and-quinoa-with-matcha-dressing"),
       ),
       Food(
-        "SAVORY DUTCH BABY FOR TWO",
+        "Savory Dutch Baby For Two",
         "https://assets.epicurious.com/photos/5c61b3ce580916481fe06e33/6:4/w_620%2Ch_413/Savory-Dutch-Baby-For-Two-hero-2-07022019.jpg",
         ["Breakfast"],
         Recipe(
