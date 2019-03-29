@@ -27,7 +27,7 @@ class MainPageState extends State<MainPage>{
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.explore), title: Text("Explore")),
             BottomNavigationBarItem(icon: Icon(Icons.subject), title: Text("Recipes")),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_basket), title: Text("Grocery List")),
+            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), title: Text("Grocery List")),
           ],
         currentIndex: navigationIndex,
         onTap: _onNavigate,

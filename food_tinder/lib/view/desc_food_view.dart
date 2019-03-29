@@ -53,7 +53,7 @@ class DescFoodViewState extends State<DescFoodView> {
           subtitle: Text(_getSubtitle()),
           trailing: IconButton(
               splashColor: Theme.of(context).accentColor,
-              icon: Icon(Icons.info),
+              icon: Icon(Icons.subject),
               onPressed: () {
                 _onTitleTap(context);
               }),
