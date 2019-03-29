@@ -48,7 +48,7 @@ class SwipeyPageState extends State<SwipeyPage> {
           ],
         ),
         body: Container(
-            color: Colors.indigo[50],
+            color: Colors.grey[200],
             child: Column(
               children: <Widget>[
                 Expanded(child: _buildFoodStack(context)),
