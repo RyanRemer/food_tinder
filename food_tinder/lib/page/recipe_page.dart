@@ -11,7 +11,7 @@ class RecipePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Recipe Information"),
+        title: Text("Recipe for " + food.name)
       ),
       body: ListView(
         children: <Widget>[RecipeView(food.recipe)],

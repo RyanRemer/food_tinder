@@ -36,7 +36,7 @@ class SwipeyPageState extends State<SwipeyPage> {
               Image.asset("assets/logo.png", height:24, width:24),
               Padding(
                 child: Text("FoodTinder"),
-                padding: EdgeInsets.only(left:5)
+                padding: EdgeInsets.only(left:7)
               )
             ]
           ),

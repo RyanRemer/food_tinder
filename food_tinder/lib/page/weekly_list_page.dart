@@ -23,8 +23,14 @@ class WeeklyListPageState extends State<WeeklyListPage> {
     return Scaffold(
       key: _scaffoldKey,
         appBar: AppBar(
-          title: Text(
-            "Recipes",
+          title: Row(
+              children: [
+                Image.asset("assets/logo.png", height:24, width:24),
+                Padding(
+                    child: Text("Recipes"),
+                    padding: EdgeInsets.only(left:7)
+                )
+              ]
           ),
         ),
         body: Container(
