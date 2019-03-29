@@ -24,17 +24,17 @@ class WeeklyListPageState extends State<WeeklyListPage> {
       key: _scaffoldKey,
         appBar: AppBar(
           title: Text(
-            "Food for the Week",
+            "Recipes",
           ),
         ),
         body: Container(
-          color: Colors.indigo[50],
+          color: Colors.grey[200],
           child: _weeklyFood.length > 0
               ? ListView(
                   children: _buildBody(context),
                 )
               : Center(
-                  child: Text("No planned recipes for this week.")),
+                  child: Text("No Recipes")),
         ));
   }
 
