@@ -31,8 +31,14 @@ class SwipeyPageState extends State<SwipeyPage> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          title: Text(
-            "Food Tinder",
+          title: Row(
+            children: [
+              Image.asset("assets/logo.png", height:24, width:24),
+              Padding(
+                child: Text("FoodTinder"),
+                padding: EdgeInsets.only(left:5)
+              )
+            ]
           ),
           actions: <Widget>[
             IconButton(
