@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/food_controller.dart';
 import 'package:food_tinder/controller/grocery_controller.dart';
 import 'package:food_tinder/model/food.dart';
-import 'package:food_tinder/page/recipe_page.dart';
+import 'package:food_tinder/page/single_recipe_page.dart';
 import 'package:food_tinder/view/min_food_view.dart';
 
 class WeeklyListPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return WeeklyListPageState();
+    return RecipesPage();
   }
 }
 
-class WeeklyListPageState extends State<WeeklyListPage> {
+class RecipesPage extends State<WeeklyListPage> {
   List<Food> _weeklyFood;
   FoodController foodController = FoodController();
   GroceryController _groceryController = GroceryController();
@@ -43,7 +43,7 @@ class WeeklyListPageState extends State<WeeklyListPage> {
 
   void _goToRecipe(BuildContext context, Food food) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => RecipePage(food)));
+        context, MaterialPageRoute(builder: (context) => SingleRecipePage(food)));
   }
 
   List<Widget> _buildBody(BuildContext context) {

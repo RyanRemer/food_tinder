@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/food_controller.dart';
 import 'package:food_tinder/model/food.dart';
-import 'package:food_tinder/page/weekly_list_page.dart';
+import 'package:food_tinder/page/recipes_page.dart';
 import 'package:food_tinder/view/desc_food_view.dart';
 
 class SwipeyPage extends StatefulWidget {
@@ -23,7 +23,6 @@ class SwipeyPageState extends State<SwipeyPage> {
   SwipeyPageState() {
     _foodController = FoodController();
     _uncheckedFoods = _foodController.getUncheckedFoods();
-    _currentFood = _uncheckedFoods.last;
   }
 
   @override

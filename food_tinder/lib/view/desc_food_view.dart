@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_tinder/model/food.dart';
-import 'package:food_tinder/page/recipe_page.dart';
+import 'package:food_tinder/page/single_recipe_page.dart';
 import 'package:food_tinder/view/food_image_view.dart';
 
 class DescFoodView extends StatefulWidget {
@@ -78,6 +78,6 @@ class DescFoodViewState extends State<DescFoodView> {
 
   void _onTitleTap(BuildContext context) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => RecipePage(food)));
+        context, MaterialPageRoute(builder: (context) => SingleRecipePage(food)));
   }
 }

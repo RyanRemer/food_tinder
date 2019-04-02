@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_tinder/page/grocery_page.dart';
+import 'package:food_tinder/page/recipes_page.dart';
 import 'package:food_tinder/page/swipey_page.dart';
-import 'package:food_tinder/page/weekly_list_page.dart';
 
 class MainPage extends StatefulWidget{
   @override
