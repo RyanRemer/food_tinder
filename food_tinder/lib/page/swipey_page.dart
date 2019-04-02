@@ -79,7 +79,7 @@ class SwipeyPageState extends State<SwipeyPage> {
   }
 
   Widget _buildFoodStack(BuildContext context) {
-    _currentFood = _uncheckedFoods.last;
+    _currentFood = null;
 
     List<Widget> stackWidgets = [
       Center(
@@ -88,6 +88,7 @@ class SwipeyPageState extends State<SwipeyPage> {
     ];
 
     if (_uncheckedFoods.length > 0) {
+      _currentFood = _uncheckedFoods.last;
       stackWidgets
           .addAll(_uncheckedFoods.map((food) => _buildFoodItem(context, food)));
     }
@@ -177,7 +178,6 @@ class SwipeyPageState extends State<SwipeyPage> {
   void acceptFood() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text("Added ${_currentFood.name} To Week"),
-      duration: Duration(seconds: 1),
     ));
 
     setState(() {

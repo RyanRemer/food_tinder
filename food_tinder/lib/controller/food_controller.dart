@@ -20,9 +20,4 @@ class FoodController{
     _clientModel.uncheckedFoods.remove(food);
     _clientModel.weeklyFood.add(food);
   }
-
-  void clearWeeklyFood(){
-    _clientModel.uncheckedFoods.addAll(_clientModel.weeklyFood);
-    _clientModel.weeklyFood.clear();
-  }
 }

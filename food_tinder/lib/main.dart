@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_tinder/page/main_page.dart';
-import 'package:food_tinder/page/swipey_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.red,
-        accentColor: Colors.indigoAccent
+        accentColor: Colors.redAccent
       ),
       home: MainPage(),
     );
