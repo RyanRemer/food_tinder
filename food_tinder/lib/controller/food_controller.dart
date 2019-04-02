@@ -12,12 +12,18 @@ class FoodController{
     return _clientModel.uncheckedFoods;
   }
 
-  List<Food> getWeeklyFood(){
-    return _clientModel.weeklyFood;
+  List<Food> getLikedFood(){
+    _clientModel.likedFood.sort((a,b)=> a.name.compareTo(b.name));
+    return _clientModel.likedFood;
   }
 
-  void moveToWeeklyFood(Food food){
+  void addToLikedFood(Food food){
     _clientModel.uncheckedFoods.remove(food);
-    _clientModel.weeklyFood.add(food);
+    _clientModel.likedFood.add(food);
+  }
+
+  void removeFromLikedFood(Food food){
+    _clientModel.likedFood.remove(food);
+    _clientModel.uncheckedFoods.add(food);
   }
 }

@@ -24,11 +24,15 @@ class GroceryPageState extends State<GroceryPage> {
               child: Text("Grocery List"), padding: EdgeInsets.only(left: 7))
         ]),
       ),
-      body: Container(child: _buildGroceryList(context)),
+      body: Container(
+          child: _groceryController.getGroceryFood().length == 0
+              ? Center(child: Text("No Recipes on Grocery List"),)
+              : _buildGroceryList(context)),
     );
   }
 
   Widget _buildGroceryList(BuildContext context) {
+    this.checkedIngredients = _groceryController.getCheckedIngredients();
     var groceryItems = List<GroceryItem>();
 
     for (var food in _groceryController.getGroceryFood()) {
@@ -64,11 +68,7 @@ class GroceryPageState extends State<GroceryPage> {
       trailing: Checkbox(
           value: checkedIngredients.contains(ingredient),
           onChanged: (value) => setState(() {
-                if (value == true) {
-                  checkedIngredients.add(ingredient);
-                } else {
-                  checkedIngredients.remove(ingredient);
-                }
+                _groceryController.setIngredientState(ingredient, value);
               })),
     );
   }

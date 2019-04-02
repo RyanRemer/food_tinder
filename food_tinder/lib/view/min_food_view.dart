@@ -34,14 +34,12 @@ class MinFoodView extends StatelessWidget {
   List<Widget> _buildTitleRow(BuildContext context) {
     var titleRowWidgets = <Widget>[
       Expanded(
-        child: Center(
           child: Text(
             food.name,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.title,
           ),
-        ),
       ),
     ];
 

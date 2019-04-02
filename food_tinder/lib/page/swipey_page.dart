@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/food_controller.dart';
 import 'package:food_tinder/model/food.dart';
-import 'package:food_tinder/page/recipes_page.dart';
 import 'package:food_tinder/view/desc_food_view.dart';
 
 class SwipeyPage extends StatefulWidget {
@@ -30,21 +29,12 @@ class SwipeyPageState extends State<SwipeyPage> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          title: Row(
-            children: [
-              Image.asset("assets/logo.png", height:24, width:24),
-              Padding(
-                child: Text("FoodTinder"),
-                padding: EdgeInsets.only(left:7)
-              )
-            ]
-          ),
+          title: Row(children: [
+            Image.asset("assets/logo.png", height: 24, width: 24),
+            Padding(
+                child: Text("FoodTinder"), padding: EdgeInsets.only(left: 7))
+          ]),
           actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.list),
-              tooltip: "Week List",
-              onPressed: () => goToWeeklyList(context),
-            ),
             IconButton(
               icon: Icon(Icons.help),
               tooltip: "Help",
@@ -60,11 +50,6 @@ class SwipeyPageState extends State<SwipeyPage> {
 //                _buildActionRow(context),
               ],
             )));
-  }
-
-  void goToWeeklyList(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => WeeklyListPage()));
   }
 
   void showHelp(BuildContext context) {
@@ -183,7 +168,7 @@ class SwipeyPageState extends State<SwipeyPage> {
     ));
 
     setState(() {
-      _foodController.moveToWeeklyFood(_currentFood);
+      _foodController.addToLikedFood(_currentFood);
     });
   }
 }

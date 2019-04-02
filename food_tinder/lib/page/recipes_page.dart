@@ -14,14 +14,14 @@ class WeeklyListPage extends StatefulWidget {
 
 class RecipesPage extends State<WeeklyListPage> {
   List<Food> _weeklyFood;
-  FoodController foodController = FoodController();
+  FoodController _foodController = FoodController();
   GroceryController _groceryController = GroceryController();
 
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    _weeklyFood = foodController.getWeeklyFood();
+    _weeklyFood = _foodController.getLikedFood();
 
     return Scaffold(
         key: _scaffoldKey,
@@ -42,40 +42,26 @@ class RecipesPage extends State<WeeklyListPage> {
   }
 
   void _goToRecipe(BuildContext context, Food food) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SingleRecipePage(food)));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => SingleRecipePage(food)));
   }
 
   List<Widget> _buildBody(BuildContext context) {
     List<Widget> bodyWidgets = List<Widget>();
 
     bodyWidgets.addAll(_weeklyFood
-        .map((food) => Container(
-            padding: EdgeInsets.all(16),
-            height: 400.0,
-            child: Card(
-              child: MinFoodView(
-                food: food,
-                actions: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.subject),
-                    tooltip: "View Recipe",
-                    onPressed: () => this._goToRecipe(context, food),
-                  ),
-                  (_groceryController.getGroceryFood().contains(food))
-                      ? IconButton(
-                          icon: Icon(Icons.remove_shopping_cart),
-                          tooltip: "Remove from Grocery List",
-                          onPressed: () => removeIngredients(food),
-                        )
-                      : IconButton(
-                          icon: Icon(Icons.add_shopping_cart),
-                          tooltip: "Add to Grocery List",
-                          onPressed: () => addIngredients(food),
-                        )
-                ],
-              ),
-            )))
+        .map(
+          (food) => Dismissible(
+              key: Key(food.name.toString()),
+              onDismissed: (direction) {
+                setState(() {
+                  this._foodController.removeFromLikedFood(food);
+                  _scaffoldKey.currentState.showSnackBar(SnackBar(
+                      content: Text("Removed ${food.name} from Recipes")));
+                });
+              },
+              child: _buildFood(context, food)),
+        )
         .toList());
 
     bodyWidgets.add(Container(
@@ -89,6 +75,34 @@ class RecipesPage extends State<WeeklyListPage> {
     return bodyWidgets;
   }
 
+  Widget _buildFood(BuildContext context, Food food) {
+    return Container(
+        padding: EdgeInsets.all(16),
+        height: 400.0,
+        child: Card(
+          child: MinFoodView(
+            food: food,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.subject),
+                tooltip: "View Recipe",
+                onPressed: () => this._goToRecipe(context, food),
+              ),
+              (_groceryController.getGroceryFood().contains(food))
+                  ? IconButton(
+                      icon: Icon(Icons.remove_shopping_cart),
+                      tooltip: "Remove from Grocery List",
+                      onPressed: () => removeIngredients(food),
+                    )
+                  : IconButton(
+                      icon: Icon(Icons.add_shopping_cart),
+                      tooltip: "Add to Grocery List",
+                      onPressed: () => addIngredients(food),
+                    )
+            ],
+          ),
+        ));
+  }
 
   void addIngredients(Food food) {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
