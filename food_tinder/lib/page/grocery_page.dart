@@ -25,8 +25,11 @@ class GroceryPageState extends State<GroceryPage> {
         ]),
       ),
       body: Container(
+          color: Colors.grey[200],
           child: _groceryController.getGroceryFood().length == 0
-              ? Center(child: Text("No Recipes on Grocery List"),)
+              ? Center(
+                  child: Text("No Recipes on Grocery List"),
+                )
               : _buildGroceryList(context)),
     );
   }
