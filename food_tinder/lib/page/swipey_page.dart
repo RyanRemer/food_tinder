@@ -168,6 +168,9 @@ class SwipeyPageState extends State<SwipeyPage> {
   }
 
   void rejectFood() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Rejected ${_currentFood.name}"),
+    ));
     setState(() {
       _uncheckedFoods.insert(0, _currentFood);
       _uncheckedFoods.removeLast();
@@ -176,7 +179,7 @@ class SwipeyPageState extends State<SwipeyPage> {
 
   void acceptFood() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text("Added ${_currentFood.name} To Week"),
+      content: Text("Added ${_currentFood.name} To Recipes"),
     ));
 
     setState(() {

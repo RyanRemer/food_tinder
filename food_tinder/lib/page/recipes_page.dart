@@ -66,16 +66,12 @@ class RecipesPage extends State<WeeklyListPage> {
                       ? IconButton(
                           icon: Icon(Icons.remove_shopping_cart),
                           tooltip: "Remove from Grocery List",
-                          onPressed: () => setState(() {
-                                this._groceryController.removeGroceryFood(food);
-                              }),
+                          onPressed: () => removeIngredients(food),
                         )
                       : IconButton(
                           icon: Icon(Icons.add_shopping_cart),
                           tooltip: "Add to Grocery List",
-                          onPressed: () => setState(() {
-                                this._groceryController.addGroceryFood(food);
-                              }),
+                          onPressed: () => addIngredients(food),
                         )
                 ],
               ),
@@ -91,5 +87,25 @@ class RecipesPage extends State<WeeklyListPage> {
     ));
 
     return bodyWidgets;
+  }
+
+
+  void addIngredients(Food food) {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Added ${food.name} ingredients to Grocery List"),
+    ));
+    setState(() {
+      this._groceryController.addGroceryFood(food);
+    });
+  }
+
+  void removeIngredients(Food food) {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Removed ${food.name} ingredients to Grocery List"),
+    ));
+
+    setState(() {
+      this._groceryController.removeGroceryFood(food);
+    });
   }
 }
