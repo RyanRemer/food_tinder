@@ -72,7 +72,7 @@ class DescFoodViewState extends State<DescFoodView> {
     var padding = 16.0;
     return Container(
       padding: EdgeInsets.only(left: padding, right: padding, bottom: padding),
-      child: Text(food.recipe.description),
+      child: Text(food.recipe.tagline),
     );
   }
 

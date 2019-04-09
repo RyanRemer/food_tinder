@@ -17,6 +17,7 @@ class MockData {
           "http://www.fussfreecooking.com/wp-content/uploads/2015/07/a1.jpg",
           ["Dinner"],
           Recipe(
+              "Easy and delicious, perfect for a relaxed evening-in",
               "These super delicious and easy grilled chicken fillets are perfect accompaniment for rice with side dishes such as sauteed Asian greens like bok choy or gai larn as well as sunny side up eggs. If you prefer a lighter meal, why not pair them with pre-packaged Asian mix salad leaves and roasted peanuts/cashews.",
               [
                 Ingredient("2", "tbsps", "tomato paste"),
@@ -39,6 +40,7 @@ class MockData {
         "https://assets.marthastewart.com/styles/wmax-300/d38/five-ways-broiled-salmon-006-med108877/five-ways-broiled-salmon-006-med108877_vert.jpg?itok=AxN9wXOW",
         ["Dinner"],
         Recipe(
+          "Healthy, easy, and it takes good? No reason not to love this dish.",
           "Healthy salmon and zucchini slices are broiled together in this quick and easy dinner. Source: Everyday Food, October 2012",
           [
             Ingredient("4", "", "zucchini"),
@@ -63,6 +65,7 @@ class MockData {
         "https://assets.marthastewart.com/styles/wmax-300/d19/20060105_edf_scampi/20060105_edf_scampi_vert.jpg?itok=qLFLPAyM",
         ["Dinner"],
         Recipe(
+            "A classic shrimp dish, with all of the flavor and none of the fuss",
             "This classic shrimp dish with garlic and lemon juice is so easy to make. Source: Everyday Food, January/February 2006",
             [
               Ingredient("1 1/2", "lbs",
@@ -89,6 +92,7 @@ class MockData {
         "https://assets.epicurious.com/photos/5c61ff8a4f003745865190d6/6:4/w_620%2Ch_413/Weeknight-Beef-Stroganoff-recipe-07022019.jpg",
         ["Dinner"],
         Recipe(
+            "Beef stroganoff gets the upgrade of the century",
             "This is not your grandma’s beef stroganoff. We took our favorite parts of the classic—the creamy mushroom sauce and the buttered egg noodles—and added a squeeze of lemon, a pan-seared medium-rare strip steak, and fresh dill for an updated weeknight dinner.",
             [
               Ingredient("1", "lb", "boneless New Yrok strip streak, patted dry"),
@@ -125,6 +129,7 @@ class MockData {
         "https://assets.epicurious.com/photos/5c6442ee0c9bd34e44ec6f50/6:4/w_620%2Ch_413/grilled-chicken-and-quinoa-matcha-dressing-recipe-BA-021319.jpg",
         ["Lunch"],
         Recipe(
+            "A light but filling salad, perfect for hot summer days",
             "The dressing on this bowl is a green goddess 2.0, with matcha adding an earthy undertone to the whole dish. Ceremonial is the highest grade of matcha and is made for drinking from the youngest tea leaves. Culinary matcha is still high-quality but has a more robust flavor, allowing it to shine through when combined with other ingredients.",
             [
               Ingredient("1/2", "cup", "quinoa"),
@@ -163,6 +168,7 @@ class MockData {
         "https://assets.epicurious.com/photos/5c61b3ce580916481fe06e33/6:4/w_620%2Ch_413/Savory-Dutch-Baby-For-Two-hero-2-07022019.jpg",
         ["Breakfast"],
         Recipe(
+          "There's no better way to say 'I love you' than with this savory breakfast",
           "Parmesan and thyme make this Baby savory, which makes it perfect to eat alongside eggs. But the real beauty of this recipe is that the batter can be made up to two days in advance—and kept in the fridge for an easy romantic breakfast for two.",
           [
             Ingredient("1/4", "cup", "all-purpose flour"),
@@ -194,6 +200,7 @@ class MockData {
         "https://assets.epicurious.com/photos/5c114607b6a8347908b6f8e4/6:4/w_620%2Ch_413/grapefruit-bars-with-candied-zest-recipe-BA-121218.jpg",
         ["Dessert"],
         Recipe(
+          "The perfect dessert after any meal",
           "Joy to the world: a citrus bar just as beautiful as it is zingy. The twice-cooked curd method was inspired by authors Rose Levy Beranbaum and Melissa Clark and ensures that these bars are extra sturdy and have a smooth, shiny surface. They hold their shape well even when sliced.",
           [
             Ingredient("1", "cup", "all-purpose flour"),
@@ -237,6 +244,7 @@ class MockData {
         "https://assets.epicurious.com/photos/5c1149673e9ec157ff93ded2/6:4/w_620%2Ch_413/pimento-cheese-crackers-recipe-BA-121218.jpg",
         ["Snack"],
         Recipe(
+          "An addictive snack, perfect for fancy appetizers or long roadtrips",
           "The addictive cheddar cracker is all grown up, thanks to a little heat from the cayenne and a hint of sweet pepper from the pimiento. This dough can be formed into a log and stashed in the freezer so it’s on hand for whenever you just happen to need a party appetizer. Let thaw in the fridge overnight before slicing.",
           [
             Ingredient("12", "oz", "sharp cheddar, coarsely grated (about 4 cups)"),
@@ -260,10 +268,42 @@ class MockData {
         )
       ),
       Food (
+        "Quick and Easy Spaghetti alla Carbonara",
+        "https://www.bowlofdelicious.com/wp-content/uploads/2015/05/Quick-and-Easy-Spaghetti-alla-Carbonara-3.jpg",
+        ["Dinner"],
+        Recipe(
+          "A budget-friendly meal that tastes expensive",
+          "Spaghetti alla Carbonara is a traditional Italian pasta dish that has pancetta (bacon can also be used) and is tossed with a mixture of parmesan cheese and eggs. And even though it uses so few ingredients, it has the most amazing, rich flavor. It’s decadent, salty, smoky, and absolutely 100% delicious.",
+          [
+            Ingredient("1", "lb", "spaghetti or other pasta"),
+            Ingredient("2", "", "eggs"),
+            Ingredient("1/2", "cup", "fresh chopped parsley"),
+            Ingredient("4", "oz", "pancetta or bacon"),
+            Ingredient("1", "cup", "shredded parmesan cheese"),
+          ],
+          [
+            "Cook pasta until a dente. Reserve 1 cup of the pasta water before draining.",
+            "Meanwhile, mix together the eggs, parmesan cheese, salt, pepper, and parsley (if using) in a small bowl, creating a paste-like consistency. Don't salt too heavily- there is plenty of salt in the pancetta and the parmesan cheese! DO add a hearty amount of fresh cracked black pepper. It gives it a nice kick.",
+            "In a deep skillet or even a large pot, cook the pancetta over medium high heat (If you are using bacon, just cut it up into approximate 1-inch pieces).",
+            "Cook until meat is browned and fat is rendered.",
+            "Add the hot pasta to the pancetta and drippings, and turn heat to low. Stir for one minute until pasta is covered in the drippings from the pancetta.",
+            "Now, add the egg and cheese mixture from before and stir for another minute. The cheese will melt and the eggs will slowly cook, coating each noodle in a creamy layer.",
+            "While stirring the pasta, gradually add some of the reserved pasta water to create an even thicker, creamier texture. You will probably not need to add the entire cup of water- just add enough until you have a nice, creamy consistency that sticks to every noodle.",
+            "Serve garnished with extra herbs, parmesan, and black pepper.",
+          ],
+          5,
+          10,
+          10,
+          "https://www.bowlofdelicious.com/quick-and-easy-spaghetti-alla-carbonara/",
+        ),
+
+      ),
+      Food (
         "Cranberry-Pistachio Based Alaska",
         "https://assets.epicurious.com/photos/5c0997ed4c751936404124bd/6:4/w_620%2Ch_413/Gourmet-Christmas-Cranberry-Pistachio-Baked-Alaska-Recipe-14112018.jpg",
         ["Dessert"],
         Recipe(
+          "A dessert as beautiful as it is delicious",
           "The magic of Christmas can be summed up in this splendid present to everyone at the table. Underneath the toasted meringue, you’ll find a surprising lightness that comes from cheery red cranberry sorbet layered with pale green pistachio ice cream and buttery pound cake (store-bought works just fine). Gift wrapping is optional.",
           [
             Ingredient("1/2", "", "vanilla bean"),
