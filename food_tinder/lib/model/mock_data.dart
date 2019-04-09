@@ -37,10 +37,10 @@ class MockData {
               "")),
       Food(
         "Glazed Salmon with Zucchini",
-        "https://assets.marthastewart.com/styles/wmax-300/d38/five-ways-broiled-salmon-006-med108877/five-ways-broiled-salmon-006-med108877_vert.jpg?itok=AxN9wXOW",
+        "http://aroundannastable.com/wp-content/uploads/2016/08/Brown-Sugar-Salmon-with-Zucchini-Noodles.jpg",
         ["Dinner"],
         Recipe(
-          "Healthy, easy, and it takes good? No reason not to love this dish.",
+          "Healthy, easy, and it tastes good? No reason not to love this dish.",
           "Healthy salmon and zucchini slices are broiled together in this quick and easy dinner. Source: Everyday Food, October 2012",
           [
             Ingredient("4", "", "zucchini"),
@@ -62,7 +62,7 @@ class MockData {
       ),
       Food(
         "Broiled Shrimp Scampi",
-        "https://assets.marthastewart.com/styles/wmax-300/d19/20060105_edf_scampi/20060105_edf_scampi_vert.jpg?itok=qLFLPAyM",
+        "https://hips.hearstapps.com/del.h-cdn.co/assets/16/13/2048x1536/sd-aspect-1459438420-shrimp-scampi-over-ricel1.jpg?resize=980:*",
         ["Dinner"],
         Recipe(
             "A classic shrimp dish, with all of the flavor and none of the fuss",
@@ -296,7 +296,32 @@ class MockData {
           10,
           "https://www.bowlofdelicious.com/quick-and-easy-spaghetti-alla-carbonara/",
         ),
-
+      ),
+      Food (
+        "Baked Gnocchi",
+        "https://www.bowlofdelicious.com/wp-content/uploads/2014/02/Four-Ingredient-Baked-Gnocchi-3.jpg",
+        ["Dinner"],
+        Recipe(
+          "An easy-to-make comfort food for lazy days",
+          "Baked Gnocchi is a quick and easy weeknight meal- cheesy, pillowy gnocchi smothered in marinara sauce- the ultimate Italian comfort food with only FOUR pre-made ingredients!",
+          [
+            Ingredient("1", "lb", "pre-made gnocchi"),
+            Ingredient("20", "oz", "marinara sauce"),
+            Ingredient("1/2", "cup", "coarsely chopped fresh basil"),
+            Ingredient("8", "oz", "whole milk mozzarella"),
+          ],
+          [
+            "Cook gnocchi by placing carefully into boiling salted water. Remove with a slotted spoon when they float to the top and place into four individual-sized mini cast-iron skillets or casserole dishes, or one baking dish.",
+            "Sprinkle basil on top of the gnocchi. Spoon marinara sauce evenly on top of the basil. Sprinkle cheese evenly on top of the sauce.",
+            "Cover with foil; bake at 425 for 10 minutes.",
+            "Remove foil; bake for another 5 minutes.",
+            "Allow to cool for a few minutes before serving. Garnish with extra basil.",
+          ],
+          4,
+          5,
+          15,
+          "https://www.bowlofdelicious.com/baked-gnocchi-with-marinara-mozzarella-and-fresh-basil/",
+        ),
       ),
       Food (
         "Cranberry-Pistachio Based Alaska",
