@@ -122,17 +122,17 @@ class SwipeyPageState extends State<SwipeyPage> {
           ),
           color: Colors.red,
           onPressed: rejectFood,
-          labelText: "Reject",
+          labelText: "Reject Recipe",
         ),
         _buildActionButton(
           context,
           icon: Icon(
-            Icons.check,
+            Icons.add,
             color: Colors.white,
           ),
           color: Colors.lightGreen,
           onPressed: acceptFood,
-          labelText: "Accept",
+          labelText: "Add Recipe",
         ),
       ],
     );
