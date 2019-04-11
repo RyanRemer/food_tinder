@@ -1,5 +1,5 @@
 import 'package:food_tinder/model/food.dart';
-import 'package:food_tinder/model/ingredient.dart';
+import 'package:food_tinder/model/grocery_item.dart';
 import 'package:food_tinder/model/mock_data.dart';
 
 class ClientModel {
@@ -11,12 +11,12 @@ class ClientModel {
   List<Food> uncheckedFoods;
   List<Food> likedFood;
   List<Food> groceryFood;
-  Set<Ingredient> checkedIngredients;
+  List<GroceryItem> groceryList;
 
   ClientModel() {
     uncheckedFoods = MockData().foods;
     likedFood = List<Food>();
     groceryFood = List<Food>();
-    checkedIngredients = Set<Ingredient>();
+    groceryList = List<GroceryItem>();
   }
 }

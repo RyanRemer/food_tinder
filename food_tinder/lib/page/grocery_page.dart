@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_tinder/controller/grocery_controller.dart';
 import 'package:food_tinder/model/grocery_item.dart';
-import 'package:food_tinder/model/ingredient.dart';
 
 class GroceryPage extends StatefulWidget {
   @override
@@ -12,7 +11,6 @@ class GroceryPage extends StatefulWidget {
 
 class GroceryPageState extends State<GroceryPage> {
   GroceryController _groceryController = GroceryController();
-  Set<Ingredient> checkedIngredients = Set<Ingredient>();
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +24,16 @@ class GroceryPageState extends State<GroceryPage> {
       ),
       body: Container(
           color: Colors.grey[200],
-          child: _groceryController.getGroceryFood().length == 0
+          child: _groceryController.getGroceryList().length == 0
               ? Center(
-                  child: Text("No Recipes on Grocery List"),
+                  child: Text("No Items on Grocery List"),
                 )
               : _buildGroceryList(context)),
     );
   }
 
   Widget _buildGroceryList(BuildContext context) {
-    this.checkedIngredients = _groceryController.getCheckedIngredients();
-    var groceryItems = List<GroceryItem>();
-
-    for (var food in _groceryController.getGroceryFood()) {
-      for (var ingredient in food.recipe.ingredients) {
-        groceryItems.add(GroceryItem(food, ingredient));
-      }
-    }
+    var groceryItems = _groceryController.getGroceryList();
 
     groceryItems.sort((a, b) {
       var nameA = a.ingredient.name.toLowerCase();
@@ -63,18 +54,27 @@ class GroceryPageState extends State<GroceryPage> {
 
     return Container(
       color: Colors.white,
-      child: ListTile(
-        title: Text(ingredient.toString(),
-            style: checkedIngredients.contains(ingredient)
-                ? TextStyle(
-                    decoration: TextDecoration.lineThrough, color: Colors.grey)
-                : TextStyle()),
-        subtitle: Text(food.name),
-        trailing: Checkbox(
-          value: checkedIngredients.contains(ingredient),
-          onChanged: (value) => setState(() {
-                _groceryController.setIngredientState(ingredient, value);
-              }),
+      child: Dismissible(
+        key: ObjectKey(groceryItem),
+        onDismissed: (direction){
+          setState(() {
+            _groceryController.removeGroceryItem(groceryItem);
+          });
+        },
+        child: ListTile(
+          title: Text(ingredient.toString(),
+              style: groceryItem.checked
+                  ? TextStyle(
+                      decoration: TextDecoration.lineThrough,
+                      color: Colors.grey)
+                  : TextStyle()),
+          subtitle: Text(food.name),
+          trailing: Checkbox(
+            value: groceryItem.checked,
+            onChanged: (value) => setState(() {
+                  _groceryController.setGroceryItemChecked(groceryItem, value);
+                }),
+          ),
         ),
       ),
     );
