@@ -58,7 +58,7 @@ class SwipeyPageState extends State<SwipeyPage> {
         builder: (context) => AlertDialog(
               title: Text("Info"),
               content: Text(
-                  "This app was made to help you plan your meals. It is called Food Tinder, because it's like Tinder, but for food! Swipe right to add a recipe to your week, swipe left to reject the recipe, and tap the list icon to view your recipes."),
+                  "This app was made to help you plan your meals. It is called Food Tinder, because it's like Tinder, but for food! Swipe right to add a recipe to your week, swipe left to reject the recipe."),
             ));
   }
 

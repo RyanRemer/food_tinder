@@ -1,3 +1,4 @@
+import 'package:food_tinder/controller/grocery_controller.dart';
 import 'package:food_tinder/model/client_model.dart';
 import 'package:food_tinder/model/food.dart';
 
@@ -23,6 +24,7 @@ class FoodController{
   }
 
   void removeFromLikedFood(Food food){
+    GroceryController().removeGroceryFood(food);
     _clientModel.likedFood.remove(food);
     _clientModel.uncheckedFoods.add(food);
   }

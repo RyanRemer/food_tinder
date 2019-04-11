@@ -61,18 +61,22 @@ class GroceryPageState extends State<GroceryPage> {
     var food = groceryItem.food;
     var ingredient = groceryItem.ingredient;
 
-    return ListTile(
-      title: Text(ingredient.toString(),
-          style: checkedIngredients.contains(ingredient)
-              ? TextStyle(
-                  decoration: TextDecoration.lineThrough, color: Colors.grey)
-              : TextStyle()),
-      subtitle: Text(food.name),
-      trailing: Checkbox(
+    return Container(
+      color: Colors.white,
+      child: ListTile(
+        title: Text(ingredient.toString(),
+            style: checkedIngredients.contains(ingredient)
+                ? TextStyle(
+                    decoration: TextDecoration.lineThrough, color: Colors.grey)
+                : TextStyle()),
+        subtitle: Text(food.name),
+        trailing: Checkbox(
           value: checkedIngredients.contains(ingredient),
           onChanged: (value) => setState(() {
                 _groceryController.setIngredientState(ingredient, value);
-              })),
+              }),
+        ),
+      ),
     );
   }
 }
